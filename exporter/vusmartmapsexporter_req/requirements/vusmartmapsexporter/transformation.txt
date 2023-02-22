@@ -1,0 +1,136 @@
+Input
+------
+{
+    "resourceSpans": [{
+        "schemaUrl": "https://opentelemetry.io/schemas/1.8.0"
+        "resource": {
+            "attributes": [{
+                "key": "key1",
+                "value": {
+                    "stringValue": "value1"
+                }
+            }]
+        },
+        "scopeSpans": [{
+            "scope": {
+                "name": "nam1",
+                "version": "ver1"
+            },
+            "spans": [{
+                    "traceId": "c35524258c4bf9ce214b9420516ac203",
+                    "spanId": "d84ad5a4e726e24c",
+                    "parentSpanId": "75928a0e73959919",
+                    "name": "Compile /WEB-INF/jsp/owners/findOwners.jsp",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1648209611425227136",
+                    "endTimeUnixNano": "1648209611430721901",
+                    "attributes": [{
+                        "key": "thread.name",
+                        "value": {
+                            "stringValue": "qtp1658534033-13"
+                        }
+                    }],
+                    "status": {
+
+                    }
+                },
+                {
+                    "traceId": "c35524258c4bf9ce214b9420516ac203",
+                    "spanId": "93d6209fd8a6965b",
+                    "parentSpanId": "75928a0e73959919",
+                    "name": "Render /WEB-INF/jsp/owners/findOwners.jsp",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1648209611430868083",
+                    "endTimeUnixNano": "1648209611436542611",
+                    "attributes": [{
+                            "key": "thread.name",
+                            "value": {
+                                "stringValue": "qtp1658534033-13"
+                            }
+                        },
+                        {
+                            "key": "thread.id",
+                            "value": {
+                                "intValue": "13"
+                            }
+                        }
+                    ],
+                    "status": {
+
+                    }
+                }
+            ]
+        }],
+    }]
+}
+
+Output
+------
+{
+"span":{
+                    "traceId": "c35524258c4bf9ce214b9420516ac203",
+                    "spanId": "d84ad5a4e726e24c",
+                    "parentSpanId": "75928a0e73959919",
+                    "name": "Compile /WEB-INF/jsp/owners/findOwners.jsp",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1648209611425227136",
+                    "endTimeUnixNano": "1648209611430721901",
+                    "attributes": [{
+                        "key": "thread.name",
+                        "value": {
+                            "stringValue": "qtp1658534033-13"
+                        }
+                    }],
+                    "status": {
+
+                    }
+                },
+"resource": {
+            "attributes": [{
+                "key": "key1",
+                "value": {
+                    "stringValue": "value1"
+                }
+            }]
+        },
+
+}
+
+{
+"span":{
+                    "traceId": "c35524258c4bf9ce214b9420516ac203",
+                    "spanId": "93d6209fd8a6965b",
+                    "parentSpanId": "75928a0e73959919",
+                    "name": "Render /WEB-INF/jsp/owners/findOwners.jsp",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1648209611430868083",
+                    "endTimeUnixNano": "1648209611436542611",
+                    "attributes": [{
+                            "key": "thread.name",
+                            "value": {
+                                "stringValue": "qtp1658534033-13"
+                            }
+                        },
+                        {
+                            "key": "thread.id",
+                            "value": {
+                                "intValue": "13"
+                            }
+                        }
+                    ],
+                    "status": {
+
+                    }
+                }
+
+"resource": {
+            "attributes": [{
+                "key": "key1",
+                "value": {
+                    "stringValue": "value1"
+                }
+            }]
+        }
+}
+
+
