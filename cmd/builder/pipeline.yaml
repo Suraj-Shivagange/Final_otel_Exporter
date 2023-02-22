@@ -1,0 +1,47 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+  # for removing span with specific span_names
+  #filter/spans:
+  #  spans:
+  #    exclude:
+  #      match_type: regexp
+  #      span_names: [Render owners/findOwners]
+  #span_Kind: [SPAN_KIND_INTERNAL]
+
+exporters:
+  logging:
+    verbosity: detailed
+  vusmartmaps:
+    brokers:
+      - "localhost:19092"
+    topic: vsmaps_json
+    protocol_version: 2.0.0
+    encoding: vusmartmaps_JSON
+  vusmartmaps/otlpjson:
+    brokers:
+      - "localhost:19092"
+    topic: kafka_json
+    encoding: otlp_json
+    protocol_version: 2.0.0
+
+  vusmartmaps/metrics:
+    brokers:
+      - "localhost:19092"
+    topic: metrics-split-input-test3
+    encoding: otlp_json
+    protocol_version: 2.0.0
+
+service:
+ pipelines:
+    traces:
+      receivers: [otlp]
+      processors: []
+      exporters: [vusmartmaps, vusmartmaps/otlpjson ]
+    metrics:
+      receivers: [otlp]
+      processors: []
+      exporters: [vusmartmaps/metrics,logging]
